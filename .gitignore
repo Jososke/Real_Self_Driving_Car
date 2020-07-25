@@ -1148,3 +1148,5 @@ ros/devel/share/waypoint_updater/cmake/waypoint_updaterConfig.cmake
 ros/src/tl_detector/light_classification/__init__.pyc
 ros/src/tl_detector/light_classification/tl_classifier.pyc
 ros/src/twist_controller/twist_controller.pyc
+ros/src/styx/bridge.pyc
+ros/src/styx/conf.pyc
