@@ -89,8 +89,8 @@ class DBWNode(object):
                                                                  self.dbw_enabled,
                                                                  self.linear_vel,
                                                                  self.angular_vel)
-             if self.dbw_enabled:
-               self.publish(self.throttle, self.brake, self.steer)
+            if self.dbw_enabled:
+               self.publish(self.throttle, self.brake, self.steering)
             rate.sleep()
 
     def publish(self, throttle, brake, steer):
@@ -110,6 +110,16 @@ class DBWNode(object):
         bcmd.pedal_cmd_type = BrakeCmd.CMD_TORQUE
         bcmd.pedal_cmd = brake
         self.brake_pub.publish(bcmd)
+
+    def dbw_enabled_cb(self, msg):
+        self.dbw_enabled = msg.data
+
+    def twist_cb(self, msg):
+        self.linear_vel = msg.twist.linear.x
+        self.angular_vel = msg.twist.angular.z
+
+    def velocity_cb(self, msg):
+        self.current_vel = msg.twist.linear.x
 
 
 if __name__ == '__main__':
