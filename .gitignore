@@ -1150,3 +1150,6 @@ ros/src/tl_detector/light_classification/tl_classifier.pyc
 ros/src/twist_controller/twist_controller.pyc
 ros/src/styx/bridge.pyc
 ros/src/styx/conf.pyc
+ros/src/twist_controller/lowpass.pyc
+ros/src/twist_controller/pid.pyc
+ros/src/twist_controller/yaw_controller.pyc
