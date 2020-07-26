@@ -68,43 +68,42 @@ Next executing:
 $ rosmsg info styx_msgs/Lane
 provides the following message information:
 
-std_msgs/Header header
-  uint32 seq
-  time stamp
-  string frame_id
-styx_msgs/Waypoint[] waypoints
-  geometry_msgs/PoseStamped pose
-    std_msgs/Header header
-      uint32 seq
-      time stamp
-      string frame_id
-    geometry_msgs/Pose pose
-      geometry_msgs/Point position
-        float64 x
-        float64 y
-        float64 z
-      geometry_msgs/Quaternion orientation
-        float64 x
-        float64 y
-        float64 z
-        float64 w
-  geometry_msgs/TwistStamped twist
-    std_msgs/Header header
-      uint32 seq
-      time stamp
-      string frame_id
-    geometry_msgs/Twist twist
-      geometry_msgs/Vector3 linear
-        float64 x
-        float64 y
-        float64 z
-      geometry_msgs/Vector3 angular
-        float64 x
-        float64 y
-        float64 z
-From here you can see that the messages contain a header and a Waypoint list named waypoints. Each waypoint has pose and twist data. Going further, you can see that twist.twist data contains 3D linear and angular velocities. For more information about twist messages, see documentation here.
+- std_msgs/Header header
+  - uint32 seq
+  - time stamp
+  - string frame_id
+- styx_msgs/Waypoint[] waypoints
+  - geometry_msgs/PoseStamped pose
+    - std_msgs/Header header
+      - uint32 seq
+      - vtime stamp
+      - string frame_id
+    - geometry_msgs/Pose pose
+      - geometry_msgs/Point position
+        - float64 x
+        - float64 y
+        - float64 z
+      - geometry_msgs/Quaternion orientation
+        - float64 x
+        - float64 y
+        - float64 z
+        - float64 w
+  - geometry_msgs/TwistStamped twist
+    - std_msgs/Header header
+      - uint32 seq
+      - time stamp
+      - string frame_id
+    - geometry_msgs/Twist twist
+      - geometry_msgs/Vector3 linear
+        - float64 x
+        - float64 y
+        - float64 z
+      - geometry_msgs/Vector3 angular
+        - float64 x
+        - float64 y
+        - float64 z
 
-Check to be sure you can explore the messages sent in /base_waypoints and /current_pose as well using the steps above!
+Each waypoint has pose and twist data. Going further, you can see that twist.twist data contains 3D linear and angular velocities.
 
 Lane message example
 As a use-case example, given a single styx_msgs/Lane message my_lane_msg, you can access the x direction linear velocity of the first waypoint in Python with:
@@ -113,12 +112,8 @@ my_lane_msg[0].twist.twist.linear.x
 Note that the coordinates for linear velocity are vehicle-centered, so only the x-direction linear velocity should be nonzero.
 
 Topics and message types
-For convenience, we have provided the following table with topic and message info for this step of the project:
 
-Topic	Msg Type	Notes
-/base_waypoints	styx_msgs/Lane	Waypoints as provided by a static .csv file.
-/current_pose	geometry_msgs/PoseStamped	Current position of the vehicle, provided by the simulator or localization.
-/final_waypoints	styx_msgs/Lane	This is a subset of /base_waypoints. The first waypoint is the one in /base_waypoints which is closest to the car.
+![alt text](./imgs/4.png)
 
 
 ## DBW Node Overview
