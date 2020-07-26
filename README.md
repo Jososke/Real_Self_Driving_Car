@@ -188,7 +188,7 @@ docker run -p 4567:4567 -v $PWD:/capstone -v /tmp/log:/root/.ros/ --rm -it capst
 The following simulator models the self driving car platform that was used and can be used to test out the ROS nodes and car functionality:
 https://github.com/udacity/CarND-Capstone/releases
 
-The simulator should display images using a unity enginer that look like:
+The simulator should display images using a unity engine that look like:
 
 ![alt text](./imgs/unity.png)
 
